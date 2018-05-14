@@ -118,6 +118,13 @@ class EnquiryForm extends Component {
                        set_enquiry_data={this.set_enquiry_data}/>
               ))}
 
+              <Checkbox get_text={this.props.config.get_text('terms_and_conditions', {terms_and_conditions_link: this.props.config.terms_and_conditions_link})}
+                        show={this.props.config.terms_and_conditions_link}
+                        required={Boolean(this.props.config.terms_and_conditions_link)}
+                        enquiry_data={this.state.enquiry_data}
+                        set_enquiry_data={this.set_enquiry_data}/>
+
+
               <div id={this.grecaptcha_container_id} className="grecaptcha"/>
 
               <If v={this.state.grecaptcha_missing}>
